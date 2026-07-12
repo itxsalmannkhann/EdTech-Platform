@@ -72,4 +72,16 @@ npm run lint
 npm run typecheck
 npm run test
 npm run build
-```g
+```
+
+## Pull Request Process
+
+1. Ensure your branch is up to date with `main`.
+2. Fill out the PR template (summary, what changed, how tested).
+3. Link any related issues.
+4. At least one approving review is required.
+5. Squash-merge with a Conventional Commit title.
+
+## Reporting Issues
+
+Use the issue templates. Include reproduction steps, expected vs. actual behavior, and environment details.
