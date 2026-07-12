@@ -28,3 +28,15 @@ on community feedback.
 - Discussions, announcements, notifications
 - Direct messaging
 
+## 🔮 v2.0 — Advanced AI & scale
+- RAG over course content (Upstash Vector)
+- Semantic & vector search
+- AI roadmap generator, study planner, progress prediction
+- Internationalization (i18n)
+- Mobile apps
+
+## Ideas / Backlog
+- Live cohorts and webinars
+- Gamification (badges, streaks, leaderboards)
+- Affiliate & instructor payout system
+- Offline mode (PWA)
