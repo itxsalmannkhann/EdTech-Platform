@@ -45,6 +45,13 @@ See [ARCHITECTURE.md](./ARCHITECTURE.md) for the full picture.
   components accessible (WCAG AA): labels, focus states, ARIA.
 - **Never hardcode secrets.** Use env vars only.
 
+## Workflow
+
+1. Make focused changes; reuse existing components/services.
+2. Run the quality gate: `format → lint → typecheck → test → build`.
+3. Use **Conventional Commits** (see [CONTRIBUTING.md](./CONTRIBUTING.md)).
+4. Update `CHANGELOG.md` and docs when behavior changes.
+5. Do not commit broken code; never force-push or commit secrets.
 
 ## Gotchas
 
