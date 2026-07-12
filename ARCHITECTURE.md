@@ -33,3 +33,19 @@ and Prisma for type-safe database access against PostgreSQL.
 (Postgres) Redis        Gemini        (payments)      (media)    (email)
 ```
 
+## Layers
+
+### 1. Presentation (`src/app`, `src/components`)
+- **Route groups**: `(marketing)`, `(auth)` for layout isolation.
+- **Server Components** fetch data directly via `src/server/*`.
+- **Client Components** (`"use client"`) handle interactivity, forms, and
+  streaming UIs.
+- **Design system** lives in `src/components/ui` (shadcn-style) plus
+  `globals.css` design tokens.
+
+### 2. Application / API (`src/app/api`, Route Handlers)
+- RESTful Route Handlers for registration, AI, and (future) course/commerce
+  operations.
+- Each handler validates input with **Zod**, applies **rate limiting**, and
+  enforces **RBAC** where needed.
+
