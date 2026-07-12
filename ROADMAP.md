@@ -10,4 +10,9 @@ on community feedback.
 - Responsive dark-blue design system
 - Prisma schema + seed
 
+## ✅ v1.2 — AI features (shipped)
+- AI Tutor with streaming responses
+- AI course recommendations
+- Personalized dashboard
+- Documentation & accessibility improvements
 
