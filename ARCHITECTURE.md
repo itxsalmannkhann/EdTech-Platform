@@ -49,3 +49,35 @@ and Prisma for type-safe database access against PostgreSQL.
 - Each handler validates input with **Zod**, applies **rate limiting**, and
   enforces **RBAC** where needed.
 
+### 3. Domain & Services (`src/lib`, `src/server`)
+- `auth.ts` — NextAuth config (JWT strategy, providers, callbacks).
+- `rbac.ts` — role hierarchy and guards (`requireUser`, `requireRole`).
+- `prisma.ts` — singleton Prisma client.
+- `ai.ts` — OpenAI-compatible client with streaming support.
+- `rate-limit.ts` — Upstash sliding-window limiters (no-op without Redis).
+- `env.ts` — type-safe env access + feature flags.
+- `server/*.ts` — server-only data access functions.
+
+### 4. Data (`prisma/`)
+- PostgreSQL via Prisma. See `prisma/schema.prisma`.
+- Generated client output to `src/generated/prisma`.
+
+## Key Decisions
+
+- **JWT sessions** keep auth edge-friendly and stateless; middleware checks for
+  the session cookie, while fine-grained role checks happen server-side.
+- **Graceful degradation**: optional integrations (AI, Redis, Stripe, email) are
+  feature-flagged so the app boots and renders even when keys are absent.
+- **Server-first data fetching** reduces client JS and improves performance/SEO.
+- **Free-tier first**: every external dependency has a generous free plan.
+
+## Rendering Strategy
+
+- Marketing pages: static where possible, dynamic for data-backed listings.
+- Dashboards: dynamic, authenticated Server Components.
+- AI endpoints: Node runtime with streaming responses.
+
+## Security
+
+See [SECURITY.md](./SECURITY.md). Highlights: RBAC, Zod validation, rate
+limiting, security headers, bcrypt password hashing, secrets via env only.
