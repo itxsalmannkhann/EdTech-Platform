@@ -16,3 +16,15 @@ on community feedback.
 - Personalized dashboard
 - Documentation & accessibility improvements
 
+## 🚧 v1.3 — Learning experience (in progress)
+- Lesson player with progress tracking
+- Notes, bookmarks, and downloads
+- Quizzes & assignments with AI feedback
+- Certificates generation (PDF)
+
+## 🔭 v1.4 — Commerce & engagement
+- Stripe checkout (live mode) and coupons
+- Wishlist & cart flows
+- Discussions, announcements, notifications
+- Direct messaging
+
